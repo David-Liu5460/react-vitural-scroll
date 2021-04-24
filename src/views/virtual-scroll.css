@@ -1,0 +1,12 @@
+.virtual__container {
+  width: 300px;
+  border: 1px solid red;
+  margin: auto;
+  overflow-y: auto;
+  margin-top: 100px;
+}
+
+.virtual__text {
+  border: 1px solid blue;
+  box-sizing: border-box;
+}

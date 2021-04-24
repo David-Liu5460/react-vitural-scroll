@@ -1,8 +1,8 @@
 import React, {
   useState, useEffect, useRef
 } from 'react';
-import { observer } from 'mobx-react';
-import styles from './virtual-scroll.module.less';
+// import { observer } from 'mobx-react';
+import './virtual-scroll.css';
 
 const offset = 10; // 上下多余元素的个数
 const itemHeight = 40; // 计算单个元素的高度
@@ -39,9 +39,8 @@ export default function Virtualscroll() {
       setEndHeight((allData.length - end) * 40);
     }
 
-    setHeight();
+    setHeight();    
 
-    let timer = null;
     function debounce(func, delay) {
       if (timer) return;
       timer = setTimeout(() => {
@@ -60,7 +59,7 @@ export default function Virtualscroll() {
   return (
     <div>
       <div 
-      className={styles.virtual__container}
+      className='virtual__container'
       style={{ height: containerHeight }}
       ref={containerRef}
     >
@@ -69,7 +68,7 @@ export default function Virtualscroll() {
 
       {
         data.map((item) => <div
-          className={styles.virtual__text}
+          className='virtual__text'
           style={{ height: itemHeight}}
           key={item}
         >
